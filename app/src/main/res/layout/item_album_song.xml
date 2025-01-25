@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ui_item_bg"
+    android:paddingStart="@dimen/spacing_medium"
+    android:paddingTop="@dimen/spacing_mid_medium"
+    android:paddingEnd="@dimen/spacing_mid_medium"
+    android:paddingBottom="@dimen/spacing_mid_medium">
+
+    <!--
+    We don't want to show an album cover, but we still want the spacing of this song
+    to be alike to other songs. So, the imageview retains it's default tonal color,
+    with us only overlaying the track number (and other elements) onto it.
+    -->
+
+    <org.oxycblt.auxio.image.CoverView
+        android:id="@+id/song_track_cover"
+        style="@style/Widget.Auxio.Image.Small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/song_track_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/def_track"
+            android:scaleType="center"
+            android:src="@drawable/ic_song_24"
+            android:visibility="invisible"
+            app:tint="@color/sel_on_cover_bg"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/song_track_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.Auxio.TitleLargeLowEmphasis"
+            android:textColor="@color/sel_on_cover_bg"
+            app:autoSizeMaxTextSize="@dimen/text_size_track_number_max"
+            app:autoSizeMinTextSize="@dimen/text_size_track_number_min"
+            app:autoSizeStepGranularity="@dimen/text_size_track_number_step"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/song_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="16" />
+
+    </org.oxycblt.auxio.image.CoverView>
+
+
+    <TextView
+        android:id="@+id/song_name"
+        style="@style/Widget.Auxio.TextView.Item.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_mid_medium"
+        android:textColor="@color/sel_selectable_text_primary"
+        app:layout_constraintBottom_toTopOf="@+id/song_duration"
+        app:layout_constraintEnd_toStartOf="@+id/song_menu"
+        app:layout_constraintStart_toEndOf="@+id/song_track_cover"
+        app:layout_constraintTop_toTopOf="@+id/song_track_cover"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Song Name" />
+
+    <TextView
+        android:id="@+id/song_duration"
+        style="@style/Widget.Auxio.TextView.Item.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_mid_medium"
+        android:textColor="?android:attr/textColorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/song_track_cover"
+        app:layout_constraintEnd_toStartOf="@+id/song_menu"
+        app:layout_constraintStart_toEndOf="@+id/song_track_cover"
+        app:layout_constraintTop_toBottomOf="@+id/song_name"
+        tools:text="16:16" />
+
+    <org.oxycblt.auxio.ui.RippleFixMaterialButton
+        android:id="@+id/song_menu"
+        style="@style/Widget.Auxio.Button.Icon.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_more_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

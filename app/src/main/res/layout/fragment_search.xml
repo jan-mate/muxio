@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:transitionGroup="true">
+
+    <org.oxycblt.auxio.ui.CoordinatorAppBarLayout
+        style="@style/Widget.Auxio.AppBarLayout"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/search_recycler">
+
+        <org.oxycblt.auxio.ui.MultiToolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/search_normal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/toolbar_search"
+                app:navigationIcon="@drawable/ic_back_24">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconContentDescription="@string/desc_clear_search"
+                    app:endIconDrawable="@drawable/ic_close_24"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorControlNormal"
+                    app:errorEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="actionSearch|flagNoExtractUi"
+                        android:inputType="textFilter"
+                        android:paddingStart="@dimen/spacing_tiny"
+                        android:paddingEnd="0dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/search_selection_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:menu="@menu/toolbar_selection"
+                app:navigationIcon="@drawable/ic_close_24" />
+
+        </org.oxycblt.auxio.ui.MultiToolbar>
+
+    </org.oxycblt.auxio.ui.CoordinatorAppBarLayout>
+
+    <org.oxycblt.auxio.list.recycler.AuxioRecyclerView
+        android:id="@+id/search_recycler"
+        style="@style/Widget.Auxio.RecyclerView.Grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:listitem="@layout/item_song" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

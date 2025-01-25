@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/submenu_filtering"
+        android:icon="@drawable/ic_filter_24"
+        android:title="@string/lbl_filter"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/option_filter_all"
+                    android:title="@string/lbl_filter_all"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/option_filter_songs"
+                    android:title="@string/lbl_songs"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/option_filter_albums"
+                    android:title="@string/lbl_albums"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/option_filter_artists"
+                    android:title="@string/lbl_artists"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/option_filter_genres"
+                    android:title="@string/lbl_genres"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/option_filter_playlists"
+                    android:title="@string/lbl_playlists"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+</menu>

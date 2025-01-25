@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:title="@string/set_content">
+    <PreferenceCategory app:title="@string/set_music">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="@string/set_key_observing"
+            app:summary="@string/set_observing_desc"
+            app:title="@string/set_observing" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="@string/set_key_exclude_non_music"
+            app:summary="@string/set_exclude_non_music_desc"
+            app:title="@string/set_exclude_non_music" />
+
+        <org.oxycblt.auxio.settings.ui.WrappedDialogPreference
+            app:key="@string/set_key_separators"
+            app:summary="@string/set_separators_desc"
+            app:title="@string/set_separators" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="@string/set_key_auto_sort_names"
+            app:summary="@string/set_intelligent_sorting_desc"
+            app:title="@string/set_intelligent_sorting" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="@string/set_key_hide_collaborators"
+            app:summary="@string/set_hide_collaborators_desc"
+            app:title="@string/set_hide_collaborators" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/set_images">
+
+        <org.oxycblt.auxio.settings.ui.IntListPreference
+            app:defaultValue="@integer/cover_mode_balanced"
+            app:entries="@array/entries_cover_mode"
+            app:entryValues="@array/values_cover_mode"
+            app:key="@string/set_key_cover_mode"
+            app:title="@string/set_cover_mode" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="@string/set_key_square_covers"
+            app:summary="@string/set_square_covers_desc"
+            app:title="@string/set_square_covers" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

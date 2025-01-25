@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This is for HomeFragment's AppBarLayout. Explanations for these can be found there. -->
+    <item name="home_song_recycler" type="id" />
+    <item name="home_album_recycler" type="id" />
+    <item name="home_artist_recycler" type="id" />
+    <item name="home_genre_recycler" type="id" />
+    <item name="home_playlist_recycler" type="id" />
+
+    <integer name="anim_fade_enter_duration">200</integer>
+    <integer name="anim_fade_exit_duration">100</integer>
+
+    <declare-styleable name="CoverView">
+        <attr name="shapeAppearance" format="reference" />
+        <attr name="iconSize" format="dimension" />
+        <attr name="enablePlaybackIndicator" format="boolean" />
+        <attr name="enableSelectionBadge" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="IntListPreference">
+        <attr name="entries" format="reference" />
+        <attr name="entryValues" format="reference" />
+        <attr name="entryIcons" format="reference" />
+        <attr name="offValue" format="reference" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:transitionGroup="true">
+
+
+    <org.oxycblt.auxio.ui.CoordinatorAppBarLayout
+        android:id="@+id/home_appbar"
+        style="@style/Widget.Auxio.AppBarLayout">
+
+        <org.oxycblt.auxio.ui.MultiToolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/home_normal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:menu="@menu/toolbar_home" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/home_selection_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:menu="@menu/toolbar_selection"
+                app:navigationIcon="@drawable/ic_close_24" />
+
+        </org.oxycblt.auxio.ui.MultiToolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabContentStart="@dimen/spacing_medium"
+            app:tabGravity="start"
+            app:tabMode="scrollable" />
+
+    </org.oxycblt.auxio.ui.CoordinatorAppBarLayout>
+
+
+    <FrameLayout
+        android:id="@+id/home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:clipToPadding="false"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:layout="@layout/fragment_home_list" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/home_indexing_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:transitionGroup="true"
+            android:visibility="invisible"
+            android:layout_margin="@dimen/spacing_medium">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/home_indexing_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_tiny" />
+
+            <ImageView
+                android:id="@+id/home_indexing_error"
+                android:layout_width="@dimen/size_touchable_small"
+                android:layout_height="@dimen/size_touchable_small"
+                android:layout_gravity="center"
+                android:contentDescription="@string/err_index_failed"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_feature_request_24"
+                app:tint="?attr/colorError"
+                tools:visibility="invisible" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

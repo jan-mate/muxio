@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Auxio.Dialog.NestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/with_tags_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/set_pre_amp_with"
+            android:textAppearance="@style/TextAppearance.Auxio.TitleMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/with_tags_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:stepSize="0.1"
+            android:valueFrom="-15.0"
+            android:valueTo="15.0"
+            app:layout_constraintEnd_toStartOf="@+id/with_tags_ticker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/with_tags_header"
+            tools:value="0.0" />
+
+        <TextView
+            android:id="@+id/with_tags_ticker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:gravity="center"
+            android:minWidth="@dimen/size_touchable_medium"
+            android:textAppearance="@style/TextAppearance.Auxio.BodySmall"
+            app:layout_constraintBottom_toBottomOf="@+id/with_tags_slider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/with_tags_slider"
+            tools:text="+1.6 dB" />
+
+        <TextView
+            android:id="@+id/without_tags_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/set_pre_amp_without"
+            android:textAppearance="@style/TextAppearance.Auxio.TitleMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/with_tags_slider" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/without_tags_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:stepSize="0.1"
+            android:valueFrom="-15.0"
+            android:valueTo="15.0"
+            app:layout_constraintEnd_toStartOf="@+id/without_tags_ticker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/without_tags_header"
+            tools:value="0.0" />
+
+        <TextView
+            android:id="@+id/without_tags_ticker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:gravity="center"
+            android:minWidth="@dimen/size_touchable_medium"
+            android:textAppearance="@style/TextAppearance.Auxio.BodySmall"
+            app:layout_constraintBottom_toBottomOf="@+id/without_tags_slider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/without_tags_slider"
+            tools:text="+1.6 dB" />
+
+        <TextView
+            android:id="@+id/pre_amp_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:text="@string/set_pre_amp_warning"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.Auxio.BodySmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/without_tags_slider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,76 @@
+// Copyright (C) 2016 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+import org.apache.tools.ant.taskdefs.condition.Os
+apply from: "$gradle.ext.androidxMediaSettingsDir/common_library_config.gradle"
+
+//android.ndkVersion = "26.3.11579264"
+android.ndkVersion = "28.0.12916984"
+android.externalNativeBuild.cmake.path = 'src/main/jni/CMakeLists.txt'
+// Should match cmake_minimum_required.
+android.externalNativeBuild.cmake.version = '3.21.0+'
+
+android {
+    namespace 'androidx.media3.decoder.ffmpeg'
+
+    // TODO(Internal: b/372449691): Remove packagingOptions once AGP is updated
+    // to version 8.5.1 or higher.
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+}
+
+task assembleFfmpeg(type: Exec) {
+    def host = ""
+    if (Os.isFamily(Os.FAMILY_MAC)) {
+        host = "darwin-x86_64"
+    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+        host = "linux-x86_64"
+    } else {
+        throw UnsupportedOperationException(
+                "Building with Windows is not supported. " +
+                        "Please use WSL or a unix-based operating system.")
+    }
+
+    def jniDir = "$projectDir/src/main/jni/"
+    def libs = new File("$jniDir/ffmpeg/android-libs")
+    if (libs.exists()) {
+        commandLine "true"
+        return
+    }
+    commandLine "sh", "-c", "$jniDir/build_ffmpeg.sh $projectDir/src/main $android.ndkDirectory $host 21 flac alac"
+}
+
+afterEvaluate {
+    preDebugBuild.dependsOn assembleFfmpeg
+    preReleaseBuild.dependsOn assembleFfmpeg
+}
+
+clean {
+    delete "$projectDir/src/main/jni/ffmpeg/android-libs/"
+}
+
+android.namespace = 'androidx.media3.decoder.ffmpeg'
+
+dependencies {
+    implementation project(modulePrefix + 'lib-decoder')
+    // TODO(b/203752526): Remove this dependency.
+    implementation project(modulePrefix + 'lib-exoplayer')
+    implementation 'androidx.annotation:annotation:' + androidxAnnotationVersion
+    compileOnly 'org.checkerframework:checker-qual:' + checkerframeworkVersion
+    compileOnly 'org.jetbrains.kotlin:kotlin-annotations-jvm:' + kotlinAnnotationsVersion
+    testImplementation project(modulePrefix + 'test-utils')
+    testImplementation 'org.robolectric:robolectric:' + robolectricVersion
+}

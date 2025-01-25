@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Auxio.V31" parent="Theme.Auxio.V29">
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_anim</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+    </style>
+
+    <!-- Use dynamic colors since that's assumed to be the setting used. -->
+    <style name="Theme.Auxio.App" parent="Theme.Auxio.Base" />
+
+    <style name="Theme.Auxio.Widget" parent="@android:style/Theme.DeviceDefault.DayNight">
+        <item name="colorPrimary">?android:attr/colorAccent</item>
+        <item name="colorOnPrimary">?attr/colorSurface</item>
+
+        <item name="colorSurface">@color/widget_surface</item>
+        <item name="colorSurfaceInverse">@color/widget_surface_inverse</item>
+        <item name="colorOnSurfaceInverse">@color/widget_on_surface_inverse</item>
+
+        <item name="colorControlNormal">?android:attr/colorControlNormal</item>
+    </style>
+</resources>

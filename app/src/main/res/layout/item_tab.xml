@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/spacing_tiny"
+    android:paddingBottom="@dimen/spacing_tiny">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/tab_check_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_mid_medium"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingStart="@dimen/spacing_medium"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.Auxio.BodyLarge"
+        tools:ignore="RtlSymmetry,contentDescription"
+        tools:text="Artists" />
+
+    <org.oxycblt.auxio.ui.RippleFixMaterialButton
+        android:id="@+id/tab_drag_handle"
+        style="@style/Widget.Auxio.Button.Icon.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_mid_large"
+        android:contentDescription="@string/desc_tab_handle"
+        app:icon="@drawable/ic_handle_24" />
+
+</LinearLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Note: The old way of naming keys was to prefix them with KEY_. Now it's to prefix them with auxio_. -->
+    <string name="set_key_ui" translatable="false">auxio_ui</string>
+    <string name="set_key_personalize" translatable="false">auxio_personalize</string>
+    <string name="set_key_music" translatable="false">auxio_music</string>
+    <string name="set_key_audio" translatable="false">auxio_audio</string>
+
+    <string name="set_key_theme" translatable="false">KEY_THEME2</string>
+    <string name="set_key_black_theme" translatable="false">KEY_BLACK_THEME</string>
+    <string name="set_key_accent" translatable="false">auxio_accent2</string>
+
+    <string name="set_key_reindex" translatable="false">auxio_reindex</string>
+    <string name="set_key_rescan" translatable="false">auxio_rescan</string>
+    <string name="set_key_observing" translatable="false">auxio_observing</string>
+    <string name="set_key_music_dirs" translatable="false">auxio_music_dirs</string>
+    <string name="set_key_cover_mode" translatable="false">auxio_cover_mode2</string>
+    <string name="set_key_square_covers" translatable="false">auxio_square_covers</string>
+    <string name="set_key_music_dirs_include" translatable="false">auxio_include_dirs</string>
+    <string name="set_key_exclude_non_music" translatable="false">auxio_exclude_non_music</string>
+    <string name="set_key_music_locations" translatable="false">auxio_music_locations2</string>
+    <string name="set_key_separators" translatable="false">auxio_separators</string>
+    <string name="set_key_auto_sort_names" translatable="false">auxio_auto_sort_names</string>
+
+    <string name="set_key_headset_autoplay" translatable="false">auxio_headset_autoplay</string>
+    <string name="set_key_replay_gain" translatable="false">auxio_replay_gain</string>
+    <string name="set_key_pre_amp" translatable="false">auxio_pre_amp</string>
+    <string name="set_key_pre_amp_with" translatable="false">auxio_pre_amp_with</string>
+    <string name="set_key_pre_amp_without" translatable="false">auxio_pre_amp_without</string>
+
+    <string name="set_key_play_in_list_with" translatable="false">auxio_play_in_list_with</string>
+    <string name="set_key_play_in_parent_with" translatable="false">auxio_play_in_parent_with</string>
+    <string name="set_key_keep_shuffle" translatable="false">KEY_KEEP_SHUFFLE</string>
+    <string name="set_key_rewind_prev" translatable="false">KEY_PREV_REWIND</string>
+    <string name="set_key_repeat_pause" translatable="false">KEY_LOOP_PAUSE</string>
+    <string name="set_key_remember_pause" translatable="false">auxio_remember_pause</string>
+
+    <string name="set_key_home_tabs" translatable="false">auxio_home_tabs</string>
+    <string name="set_key_hide_collaborators" translatable="false">auxio_hide_collaborators</string>
+    <string name="set_key_round_mode" translatable="false">auxio_round_covers</string>
+    <string name="set_key_bar_action" translatable="false">auxio_bar_action</string>
+    <string name="set_key_notif_action" translatable="false">auxio_notif_action</string>
+
+    <string name="set_key_search_filter_to" translatable="false">KEY_SEARCH_FILTER</string>
+
+    <string name="set_key_songs_sort" translatable="false">auxio_songs_sort</string>
+    <string name="set_key_albums_sort" translatable="false">auxio_albums_sort</string>
+    <string name="set_key_artists_sort" translatable="false">auxio_artists_sort</string>
+    <string name="set_key_genres_sort" translatable="false">auxio_genres_sort</string>
+    <string name="set_key_playlists_sort" translatable="false">auxio_playlists_sort</string>
+
+    <string name="set_key_album_songs_sort" translatable="false">auxio_album_sort</string>
+    <string name="set_key_artist_songs_sort" translatable="false">auxio_artist_sort</string>
+    <string name="set_key_genre_songs_sort" translatable="false">auxio_genre_sort</string>
+
+    <string name="set_key_library_revision" translatable="false">auxio_library_revision</string>
+
+    <string-array name="entries_theme">
+        <item>@string/set_theme_auto</item>
+        <item>@string/set_theme_day</item>
+        <item>@string/set_theme_night</item>
+    </string-array>
+
+    <array name="icons_theme">
+        <item>@drawable/ic_auto_24</item>
+        <item>@drawable/ic_light_24</item>
+        <item>@drawable/ic_dark_24</item>
+    </array>
+
+    <integer-array name="values_theme">
+        <item>@integer/theme_auto</item>
+        <item>@integer/theme_light</item>
+        <item>@integer/theme_dark</item>
+    </integer-array>
+
+    <string-array name="entries_cover_mode">
+        <item>@string/set_cover_mode_off</item>
+        <item>@string/set_cover_mode_save_space</item>
+        <item>@string/set_cover_mode_balanced</item>
+        <item>@string/set_cover_mode_high_quality</item>
+    </string-array>
+
+    <integer-array name="values_cover_mode">
+        <item>@integer/cover_mode_off</item>
+        <item>@integer/cover_mode_save_space</item>
+        <item>@integer/cover_mode_balanced</item>
+        <item>@integer/cover_mode_high_quality</item>
+    </integer-array>
+
+    <string-array name="entries_bar_action">
+        <item>@string/set_action_mode_next</item>
+        <item>@string/set_action_mode_repeat</item>
+        <item>@string/lbl_shuffle</item>
+    </string-array>
+
+    <integer-array name="values_bar_action">
+        <item>@integer/action_mode_next</item>
+        <item>@integer/action_mode_repeat</item>
+        <item>@integer/action_mode_shuffle</item>
+    </integer-array>
+
+    <integer-array name="entries_notif_action">
+        <item>@string/set_action_mode_repeat</item>
+        <item>@string/lbl_shuffle</item>
+    </integer-array>
+
+    <integer-array name="values_notif_action">
+        <item>@integer/action_mode_repeat</item>
+        <item>@integer/action_mode_shuffle</item>
+    </integer-array>
+
+    <string-array name="entries_play_in_list_with">
+        <item>@string/set_play_song_from_all</item>
+        <item>@string/set_play_song_from_album</item>
+        <item>@string/set_play_song_from_artist</item>
+        <item>@string/set_play_song_from_genre</item>
+        <item>@string/set_play_song_by_itself</item>
+    </string-array>
+
+    <integer-array name="values_play_in_list_with">
+        <item>@integer/play_song_from_all</item>
+        <item>@integer/play_song_from_album</item>
+        <item>@integer/play_song_from_artist</item>
+        <item>@integer/play_song_from_genre</item>
+        <item>@integer/play_song_by_itself</item>
+    </integer-array>
+
+    <string-array name="entries_play_in_parent_with">
+        <item>@string/set_play_song_none</item>
+        <item>@string/set_play_song_from_all</item>
+        <item>@string/set_play_song_from_album</item>
+        <item>@string/set_play_song_from_artist</item>
+        <item>@string/set_play_song_from_genre</item>
+        <item>@string/set_play_song_by_itself</item>
+    </string-array>
+
+    <integer-array name="values_play_in_parent_with">
+        <item>@integer/play_song_none</item>
+        <item>@integer/play_song_from_all</item>
+        <item>@integer/play_song_from_album</item>
+        <item>@integer/play_song_from_artist</item>
+        <item>@integer/play_song_from_genre</item>
+        <item>@integer/play_song_by_itself</item>
+    </integer-array>
+
+    <string-array name="entries_replay_gain">
+        <item>@string/set_replay_gain_mode_off</item>
+        <item>@string/set_replay_gain_mode_track</item>
+        <item>@string/set_replay_gain_mode_album</item>
+        <item>@string/set_replay_gain_mode_dynamic</item>
+    </string-array>
+
+    <integer-array name="values_replay_gain">
+        <item>@integer/replay_gain_off</item>
+        <item>@integer/replay_gain_track</item>
+        <item>@integer/replay_gain_album</item>
+        <item>@integer/replay_gain_dynamic</item>
+    </integer-array>
+
+    <integer name="theme_auto">-1</integer>
+    <integer name="theme_light">1</integer>
+    <integer name="theme_dark">2</integer>
+
+    <integer name="play_song_none">-2147483648</integer>
+    <integer name="play_song_from_all">0xA11F</integer>
+    <integer name="play_song_from_album">0xA120</integer>
+    <integer name="play_song_from_artist">0xA121</integer>
+    <integer name="play_song_from_genre">0xA122</integer>
+    <integer name="play_song_by_itself">0xA124</integer>
+
+    <integer name="replay_gain_off">0xA110</integer>
+    <integer name="replay_gain_track">0xA111</integer>
+    <integer name="replay_gain_album">0xA112</integer>
+    <integer name="replay_gain_dynamic">0xA113</integer>
+
+    <integer name="action_mode_next">0xA119</integer>
+    <integer name="action_mode_repeat">0xA11A</integer>
+    <integer name="action_mode_shuffle">0xA11B</integer>
+
+    <integer name="cover_mode_off">0xA11C</integer>
+    <integer name="cover_mode_save_space">0xA125</integer>
+    <integer name="cover_mode_balanced">0xA11D</integer>
+    <integer name="cover_mode_high_quality">0xA11E</integer>
+</resources>

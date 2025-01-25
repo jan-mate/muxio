@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Master parent theme -->
+    <style name="Theme.Auxio" parent="Theme.Material3.DynamicColors.DayNight" />
+    <!-- Adds nicer selector attributes not supported on lollipop -->
+    <style name="Theme.Auxio.V23" parent="Theme.Auxio" />
+    <!-- Handles edge-to-edge on other styles variants -->
+    <style name="Theme.Auxio.V27" parent="Theme.Auxio.V23">
+        <item name="android:statusBarColor">@color/chrome_translucent</item>
+        <item name="android:navigationBarColor">@color/chrome_translucent</item>
+    </style>
+    <!-- Adds fully transparent system bars -->
+    <style name="Theme.Auxio.V29" parent="Theme.Auxio.V27" />
+    <!-- Adds an animated splash screen. -->
+    <style name="Theme.Auxio.V31" parent="Theme.Auxio.V29" />
+
+    <!-- Base theme -->
+    <style name="Theme.Auxio.Base" parent="Theme.Auxio.V31">
+
+        <!-- Material configuration -->
+<!--        <item name="colorOutline">@color/overlay_stroke</item>-->
+        <item name="toolbarStyle">@style/Widget.Auxio.Toolbar</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Auxio.Dialog</item>
+        <item name="sliderStyle">@style/Widget.Auxio.Slider</item>
+        <item name="linearProgressIndicatorStyle">@style/Widget.Auxio.LinearProgressIndicator</item>
+        <item name="bottomSheetStyle">@style/Widget.Auxio.BottomSheet</item>
+        <item name="bottomSheetDialogTheme">@style/Widget.Auxio.BottomSheet.Dialog</item>
+        <item name="bottomSheetDragHandleStyle">@style/Widget.Auxio.BottomSheet.Handle</item>
+
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Auxio.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Auxio.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Auxio.DisplaySmall</item>
+
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Auxio.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Auxio.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Auxio.HeadlineSmall</item>
+
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Auxio.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Auxio.TitleMedium
+        </item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Auxio.TitleSmall</item>
+
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Auxio.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Auxio.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Auxio.LabelSmall</item>
+
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Auxio.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Auxio.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Auxio.BodySmall</item>
+
+        <!-- Fix dumb default android behavior -->
+        <item name="android:scrollbars">none</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlHighlight">@color/sel_compat_ripple</item>
+        <item name="colorControlNormal">?attr/colorOnSurfaceVariant</item>
+        <item name="colorControlActivated">?attr/colorPrimary</item>
+
+        <!-- Work around hard-coded text highlight colors in the default Material3 theme -->
+        <item name="android:textColorHighlight">@color/overlay_text_highlight</item>
+        <item name="android:textColorHighlightInverse">@color/overlay_text_highlight_inverse</item>
+
+        <item name="preferenceTheme">@style/PreferenceTheme.Auxio</item>
+        <item name="preferenceStyle">@style/Preference.Auxio</item>
+        <item name="preferenceCategoryStyle">@style/Preference.Auxio.PreferenceCategory</item>
+        <item name="dialogPreferenceStyle">@style/Preference.Auxio.DialogPreference</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.Auxio.SwitchPreferenceCompat
+        </item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.Auxio.Toolbar.Navigation</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.Auxio.Button.Overflow</item>
+    </style>
+
+    <!-- Make sure blue is the default style instead of material purple -->
+    <style name="Theme.Auxio.App" parent="@style/Theme.Auxio.Blue" />
+
+    <!--
+    Theming widgets is technically possible below Android 12, but I *really* don't care enough
+    to bother with it.
+    -->
+    <style name="Theme.Auxio.Widget" parent="@style/Theme.Auxio.Blue" />
+</resources>

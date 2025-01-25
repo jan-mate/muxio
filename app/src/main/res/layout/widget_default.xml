@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ui_widget_bg_sharp"
+    android:backgroundTint="?attr/colorSurface"
+    android:theme="@style/Theme.Auxio.Widget"
+    tools:ignore="Overdraw">
+
+    <android.widget.ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.275"
+        android:contentDescription="@string/desc_no_cover"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_auxio_24"
+        android:tint="?attr/colorPrimary" />
+
+    <android.widget.TextView
+        style="@style/Widget.Auxio.TextView.Primary.AppWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:padding="@dimen/spacing_medium"
+        android:singleLine="false"
+        android:text="@string/def_playback"
+        android:textAlignment="center" />
+
+</FrameLayout>
